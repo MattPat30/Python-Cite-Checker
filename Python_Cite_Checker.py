@@ -14,7 +14,7 @@ simply follow these steps:
 3. advanced replace ^e with nothing in the file that contains text and footnotes to remove the endnotes
 
 
-This software currently checks for BBS 2.1.2,  BBS 2.1.4, BBS 2.2.2, and BBS 2.3.5 in text and BBS 2.1.2, BBS 2.1.4, BBS 2.3.5, BBS 2.2.2, BBS 3.4, and BBS 4.1.3 in footnotes
+This software currently checks for BBS 2.1.3,  BBS 2.1.4, BBS 2.2.2, and BBS 2.3.5 in text and BBS 2.1.3, BBS 2.1.4, BBS 2.3.5, BBS 2.2.2, BBS 3.4, and BBS 4.1.3 in footnotes
 ''')
       
 val_text= input("Enter the name of your file with text (example: \"dummyfile.docx\")")
@@ -32,7 +32,7 @@ resultsdocument.add_paragraph("Each error found will give an explanation the rul
 resultsdocument.add_paragraph("Multiple errors of the same type in the same paragraph or footnote will be seperate by a comma.")
 resultsdocument.add_paragraph("For example, the beelow is flagging two seperate BBS 3.4 errors in the same footnote.")
 resultsdocument.add_paragraph("[  ] BBS 3.4 - (Prohibited Word \"was\") ['defining mass incarceration to mean America’s exceedingly high incarceration rates concentrated within was disadvantaged communities', 'describing new wave of progressive district was attorneys']")
-resultsdocument.add_paragraph("This software currently checks for BBS 2.1.2,  BBS 2.1.4, BBS 2.2.2, and BBS 2.3.5 in text and BBS 2.1.2, BBS 2.1.4, BBS 2.3.5, BBS 2.2.2, BBS 3.4, and BBS 4.1.3 in footnotes")
+resultsdocument.add_paragraph("This software currently checks for BBS 2.1.3,  BBS 2.1.4, BBS 2.2.2, and BBS 2.3.5 in text and BBS 2.1.3, BBS 2.1.4, BBS 2.3.5, BBS 2.2.2, BBS 3.4, and BBS 4.1.3 in footnotes")
 
 
 idcounter = 0
@@ -50,7 +50,7 @@ resultsdocument.add_heading('####### TEXT ERRORS #######', level=1)
 for para in document_text.paragraphs:
     str = para.text
     '''
-    searching for BBS 2.1.2
+    searching for BBS 2.1.3
     '''
     triplecolon = re.findall(r'(\w+\:\s\s\s+\w+)', str)    
     singlecolon = re.findall(r'(\w+\:\s\w+)', str)
@@ -88,25 +88,25 @@ for para in document_text.paragraphs:
         '''
              
         '''
-        Printing BBS 2.1.2 - colon rule
+        Printing BBS 2.1.3 - colon rule
         '''
         
         if triplecolon:      
-            print("BBS 2.1.2 - (too many spaces after colon)", "\n", "    []", '\n     [] '.join(triplecolon))
+            print("BBS 2.1.3 - (too many spaces after colon)", "\n", "    []", '\n     [] '.join(triplecolon))
             
-            Words = "[  ] BBS 2.1.2 - (too many spaces after colon) {}".format(triplecolon)  
+            Words = "[  ] BBS 2.1.3 - (too many spaces after colon) {}".format(triplecolon)  
             resultsdocument.add_paragraph(Words)
         
         if singlecolon:      
-            print("BBS 2.1.2 - (only 1 space after colon)", "\n", "    []", '\n     [] '.join(singlecolon))
+            print("BBS 2.1.3 - (only 1 space after colon)", "\n", "    []", '\n     [] '.join(singlecolon))
             
-            Words = "[  ] BBS 2.1.2 - (only 1 space after colon) {}".format(singlecolon)  
+            Words = "[  ] BBS 2.1.3 - (only 1 space after colon) {}".format(singlecolon)  
             resultsdocument.add_paragraph(Words)
         
         if nocolon:      
-            print("BBS 2.1.2 - (no space after colon)", "\n", "    []", '\n     [] '.join(nocolon))
+            print("BBS 2.1.3 - (no space after colon)", "\n", "    []", '\n     [] '.join(nocolon))
            
-            Words = "[  ] BBS 2.1.2 - (no space after colon) {}".format(nocolon)  
+            Words = "[  ] BBS 2.1.3 - (no space after colon) {}".format(nocolon)  
             resultsdocument.add_paragraph(Words)
             
         '''
@@ -183,7 +183,7 @@ for para in document_fn.paragraphs:
     nosemi = re.findall(r'(\;\w+)', str)
     
     '''
-    searching for BBS 2.1.2
+    searching for BBS 2.1.3
     '''
     triplecolon = re.findall(r'(\w+\:\s\s\s+\w+)', str)    
     singlecolon = re.findall(r'(\w+\:\s\w+)', str)
@@ -229,25 +229,25 @@ for para in document_fn.paragraphs:
     '''
      
     '''
-    Printing BBS 2.1.2 - colon rule
+    Printing BBS 2.1.3 - colon rule
     '''
     
     if triplecolon:      
-        print("BBS 2.1.2 - (too many spaces after colon)", "\n", "    []", '\n     [] '.join(triplecolon))
+        print("BBS 2.1.3 - (too many spaces after colon)", "\n", "    []", '\n     [] '.join(triplecolon))
         
-        Words = "[  ] BBS 2.1.2 - (too many spaces after colon) {}".format(triplecolon)  
+        Words = "[  ] BBS 2.1.3 - (too many spaces after colon) {}".format(triplecolon)  
         resultsdocument.add_paragraph(Words)
           
     if singlecolon:      
-        print("BBS 2.1.2 - (only 1 space after colon)", "\n", "    []", '\n     [] '.join(singlecolon))
+        print("BBS 2.1.3 - (only 1 space after colon)", "\n", "    []", '\n     [] '.join(singlecolon))
          
-        Words = "[  ] BBS 2.1.2 - (only 1 space after colon) {}".format(singlecolon)  
+        Words = "[  ] BBS 2.1.3 - (only 1 space after colon) {}".format(singlecolon)  
         resultsdocument.add_paragraph(Words)
         
     if nocolon:      
-        print("BBS 2.1.2 - (no space after colon)", "\n", "    []", '\n     [] '.join(nocolon))
+        print("BBS 2.1.3 - (no space after colon)", "\n", "    []", '\n     [] '.join(nocolon))
     
-        Words = "[  ] BBS 2.1.2 - (no space after colon) {}".format(nocolon)  
+        Words = "[  ] BBS 2.1.3 - (no space after colon) {}".format(nocolon)  
         resultsdocument.add_paragraph(Words)
     '''
     Printing BBS 2.1.4 - semicolon rule
@@ -256,13 +256,13 @@ for para in document_fn.paragraphs:
     if extrasemi:      
         print("BBS 2.1.4 - (extra space after semicolon)", "\n", "    []", '\n     [] '.join(extrasemi))
             
-        Words = "[  ] BBS 2.1.2 - (only 1 space after colon) {}".format(extrasemi)  
+        Words = "[  ] BBS 2.1.3 - (only 1 space after colon) {}".format(extrasemi)  
         resultsdocument.add_paragraph(Words)
         
     if nosemi:      
         print("BBS 2.1.4 - (need one space after semicolon)", "\n", "    []", '\n     [] '.join(nosemi))
            
-        Words = "[  ] BBS 2.1.2 - (no space after colon) {}".format(nosemi)  
+        Words = "[  ] BBS 2.1.3 - (no space after colon) {}".format(nosemi)  
         resultsdocument.add_paragraph(Words) 
     
         
@@ -416,11 +416,4 @@ for para in document_fn.paragraphs:
     resultsdocument.add_paragraph(para.text)
     Par = Par + 1
 
-resultsdocument.save(val_results)   
-
-
-'''
-Dummy_File_text.docx
-Dummy_File_footnotes.docx
-results_with_elipse.docx
-'''
+resultsdocument.save(val_results)
